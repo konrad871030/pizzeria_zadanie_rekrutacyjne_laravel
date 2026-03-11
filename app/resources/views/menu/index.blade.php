@@ -39,7 +39,15 @@
                                     <span class="fs-5 fw-bold text-danger">
                                         {{ number_format((float) $item->price, 2, ',', ' ') }} zł
                                     </span>
-                                    <a href="#" class="btn btn-danger rounded-pill px-4">Zamów</a>
+                                    <button
+                                        type="button"
+                                        class="btn btn-danger rounded-pill px-4 order-button"
+                                        data-bs-toggle="offcanvas"
+                                        data-bs-target="#orderOffcanvas"
+                                        data-pizza-id="{{ $item->id }}"
+                                    >
+                                        Zamów
+                                    </button>
                                 </div>
                             </div>
                         </article>
@@ -48,4 +56,5 @@
             </div>
         </div>
     </div>
+    @include('components.order-offcanvas', ['menuItems' => $menuItems])
 @endsection

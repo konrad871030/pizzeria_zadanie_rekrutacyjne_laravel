@@ -9,19 +9,3 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
-.menu-item img {
-    height: 240px;
-    object-fit: contain;
-}
-.menu-item .card-body {
-    padding: 1.5rem;
-}
-.menu-item .card-body h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-.menu-item .card-body p {
-    font-size: 1rem;
-    color: #6c757d;
-}
