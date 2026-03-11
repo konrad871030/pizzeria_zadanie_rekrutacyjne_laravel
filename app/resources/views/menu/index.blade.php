@@ -13,10 +13,10 @@
                 <div class="col-12 col-lg-auto">
                     <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
                         <span class="badge rounded-pill text-bg-primary fs-6 px-3 py-2">
-                            W kolejce: <span id="queue-count">0</span>
+                            W kolejce: <span id="queue-count">{{ $queueCount }}</span>
                         </span>
                         <span class="badge rounded-pill text-bg-success fs-6 px-3 py-2">
-                            Czas oczekiwania: <span id="waiting-time">0</span> min
+                            Czas oczekiwania: <span id="waiting-time">{{ $waitingTime }}</span> min
                         </span>
                     </div>
                 </div>
@@ -26,11 +26,7 @@
                 @foreach ($menuItems as $item)
                     <div class="col-12 col-md-6 col-xl-4">
                         <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden menu-item">
-                            <img
-                                src="{{ asset('images/menu/' . $item->image) }}"
-                                class="card-img-top"
-                                alt="{{ $item->name }}"
-                            >
+                            <img src="{{ asset('images/menu/' . $item->image) }}" class="card-img-top" alt="{{ $item->name }}">
                             <div class="card-body d-flex flex-column p-4">
                                 <h2 class="h4 fw-semibold mb-2">{{ $item->name }}</h2>
                                 <p class="text-secondary mb-4">{{ $item->description }}</p>
@@ -39,13 +35,9 @@
                                     <span class="fs-5 fw-bold text-danger">
                                         {{ number_format((float) $item->price, 2, ',', ' ') }} zł
                                     </span>
-                                    <button
-                                        type="button"
-                                        class="btn btn-danger rounded-pill px-4 order-button"
-                                        data-bs-toggle="offcanvas"
-                                        data-bs-target="#orderOffcanvas"
-                                        data-pizza-id="{{ $item->id }}"
-                                    >
+                                    <button type="button" class="btn btn-danger rounded-pill px-4 order-button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#orderOffcanvas"
+                                        data-pizza-id="{{ $item->id }}">
                                         Zamów
                                     </button>
                                 </div>

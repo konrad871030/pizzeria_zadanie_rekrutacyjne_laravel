@@ -7,7 +7,7 @@
     </div>
 
     <div class="offcanvas-body">
-        <form action="#" method="POST" class="d-flex flex-column gap-3">
+        <form action="{{ route('order.store') }}" method="POST" class="d-flex flex-column gap-3">
             @csrf
 
             <div>

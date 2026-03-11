@@ -9,6 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    @if (session('success'))
+        @include('components.message-success')
+    @endif
+    @if (session('error'))
+        @include('components.message-error')
+    @endif
     @yield('content')
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
